@@ -46,7 +46,6 @@ else:
     wartosci = [dodatnie, ujemne, zera]
 
     plt.figure()
-    bars = plt.bar(kategorie, wartosci)
     plt.title("Liczba dodatnich, ujemnych i zer")
     plt.ylabel("Liczba wystąpień")
     plt.grid(axis="y", linestyle="--", alpha=0.6)
