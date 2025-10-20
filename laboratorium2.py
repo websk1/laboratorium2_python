@@ -42,10 +42,9 @@ else:
     plt.grid(axis="y", linestyle="--", alpha=0.6)
 
 
+    plt.figure()
     kategorie = ["Dodatnie", "Ujemne", "Zera"]
     wartosci = [dodatnie, ujemne, zera]
-
-    plt.figure()
     plt.title("Liczba dodatnich, ujemnych i zer")
     plt.ylabel("Liczba wystąpień")
     plt.grid(axis="y", linestyle="--", alpha=0.6)
