@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 data = input("Podaj liczby całkowite oddzielone spacją: ")
 
 if not data:
@@ -15,7 +17,10 @@ else:
 
 
     maks = max(liczbyCalkowite)
-    min_ = min(liczbyCalkowite)
+    minimum = min(liczbyCalkowite)
+
+    odwrotnaKolejnosc = liczbyCalkowite[::-1]
+
 
     print(f"Liczba wszystkich wartości: {iloscLiczb}")
     print(f"Suma: {suma}")
@@ -24,4 +29,36 @@ else:
     print(f"Liczba ujemnych: {ujemne}")
     print(f"Liczba zer: {zera}")
     print(f"Największa wartość: {maks}")
-    print(f"Najmniejsza wartość: {min_}")
+    print(f"Najmniejsza wartość: {minimum}")
+
+    print(f"Odwrotna kolejność: {odwrotnaKolejnosc}")
+
+#Wykresy
+    plt.figure()
+    plt.hist(liczbyCalkowite, bins=100, edgecolor="black")
+    plt.title("Histogram wartości")
+    plt.xlabel("Wartość")
+    plt.ylabel("Częstość")
+    plt.grid(axis="y", linestyle="--", alpha=0.6)
+
+
+    kategorie = ["Dodatnie", "Ujemne", "Zera"]
+    wartosci = [dodatnie, ujemne, zera]
+
+    plt.figure()
+    bars = plt.bar(kategorie, wartosci)
+    plt.title("Liczba dodatnich, ujemnych i zer")
+    plt.ylabel("Liczba wystąpień")
+    plt.grid(axis="y", linestyle="--", alpha=0.6)
+    plt.bar(kategorie, wartosci, color=["green", "red", "gray"])
+    plt.title("Liczba dodatnich, ujemnych i zer")
+
+    plt.figure()
+    plt.plot(range(1, iloscLiczb + 1), liczbyCalkowite, marker="o")
+    plt.title("Wykres kolejności liczb")
+    plt.xlabel("Indeks")
+    plt.ylabel("Wartość")
+    plt.grid(True)
+
+    plt.tight_layout()
+    plt.show()
