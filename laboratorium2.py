@@ -36,7 +36,24 @@ while petla:
         print(f"Najmniejsza wartość: {minimum}")
         print(f"Odwrotna kolejność: {odwrotnaKolejnosc}")
 
-    #Wykresy
+        wyniki = (
+            f"Liczba wszystkich wartosci: {iloscLiczb}\n"
+            f"Suma: {suma}\n"
+            f"Srednia: {srednia:.2f}\n"
+            f"Liczba dodatnich: {dodatnie}\n"
+            f"Liczba ujemnych: {ujemne}\n"
+            f"Liczba zer: {zera}\n"
+            f"Najwieksza wartosc: {maks}\n"
+            f"Najmniejsza wartosc: {minimum}\n"
+            f"Odwrotna kolejnosc: {odwrotnaKolejnosc}"
+        )
+
+        print(wyniki)
+
+        with open("wyniki.txt", "w") as f:
+            f.write(wyniki)
+
+        #Wykresy
         plt.figure()
         plt.hist(liczbyCalkowite, bins=100, edgecolor="black")
         plt.title("Histogram wartości")
