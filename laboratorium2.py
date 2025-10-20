@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
-data = input("Podaj liczby całkowite oddzielone spacją: ")
+dane = input("Podaj liczby całkowite oddzielone spacją: ")
 
-if not data:
+if not dane:
     print("Nie wprowadzono żadnych danych.")
 else:
-    liczbyCalkowite = [int(x) for x in data.split()]
+    liczbyCalkowite = [int(liczba) for liczba in dane.split()]
 
     iloscLiczb = len(liczbyCalkowite)
     suma = sum(liczbyCalkowite)
